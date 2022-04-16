@@ -1,15 +1,13 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-const Home: NextPage = () => {
+export default function Home() {
+  const allPages = useRouter();
   return (
-    
-    <div>
-      teste
-    </div>
-  )
+    <>
+      {useEffect(() => {
+        allPages.push('/pessoas');
+      }, [allPages])}
+    </>
+  );
 }
-
-export default Home
